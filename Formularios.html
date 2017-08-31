@@ -6,11 +6,94 @@
 
     <body>
             <h2> Ejemplos de Formularios </h2>
-            <form action="https://www.w3schools.com/action_page.php"
+                <!--      
+                <form action="https://www.w3schools.com/action_page.php"
                 method="GET">
-                Nombre: <input type="text" name="nombreUsuario">
+
+                
+
+                 Nombre: <input type="text" name="nombreUsuario">
                 Edad: <input type="number" name="edadUsuario" >
                 <input type="submit">
+
+                -->
+
+
+
+            <form action="https://www.tecweb-acominf.c9users.io/envio.php"
+                method="POST">
+
+            <h2> Ejemplos de Formularios Parte 2 </h2>
+           
+            <form method="POST">
+
+            <fieldset> 
+                <legend> Datos Personales </legend>
+                <label >
+                Nombre: <input type="text" name="nombreUsuario" placeholder="Nombre y apeidos">
+                </label>
+
+
+                <br>
+                <label for="idContraseña">
+                Contraseña:
+                </label>
+                
+                <input type="password" required name="passWUsuario" id="idContraseña" >
+
+                <br>
+                Edad: <input type="number" name="edadUsuario" >
+                <br>
+                Foto de Perfil:
+                <input type="file" name="foto">
+                <br>
+                Fecha Nacimiento:
+                <input type="date" name="fecha">
+                <br>
+                Estado de origen:
+                <select name="estado"> <!-- combobox -->
+                    <option value="SLP">  San Luis Potosi  </opcion>
+                    <option value="GDJ">  Guadalajara  </opcion>
+                    <option value="CHA">  Chihuahua  </opcion>
+                    <option value="GRO">  Guerrero  </opcion>
+                </select>
+                <br>
+                Materias Favoritas:
+                <select name="materiasFav[]" multiple>
+                    <option> Pensamiento computacional</option>
+                    <option> Quimica</option>
+                    <option> Compiladores</option>
+                    <option> Dineño de Circuitos</option>
+                    <option> Calculo A</option>
+                </select>
+                <br>
+                Comentarios:
+                <textarea placeholder="Escribe tus comentarios">  </textarea>
+
+                <input type="submit">
+            </fieldset>
+
+            <fieldset> 
+                <legend> Preferencias </legend>
+                Sistema Operativo: 
+                <br>
+                <input type="checkbox" name="so{}" id="check1" value="Windows"> Windows
+                <input type="checkbox" name="so1{}" id="check2" value="iOS"> iOS
+                <input type="checkbox" name="so2{}" id="check2" value="Linux"> Linux
+                <br>
+                SmartPhone: 
+                <br>
+                <input type="radio" name="smartRadio" id="radio1" value="Android"> Android
+                <input type="radio" name="smartRadio" id="radio2" value="iOS"> iOS
+                <input type="submit">
+                <input type="button" value="Registar">
+                <button> Registrar </button>
+                <br>
+                <input type="reset" value="Limpiar">
+                </fieldset>
+            </form>
+
+
     </body>
 
 </html>
