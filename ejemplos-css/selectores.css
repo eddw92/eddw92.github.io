@@ -1,0 +1,14 @@
+/*Selector universal */
+*{
+    font-family: Arial;
+
+   
+}
+
+.subtitulo {
+    color: blueviolet
+}
+
+#intro{
+    font-weight: bold;
+}
