@@ -1,11 +1,11 @@
 *{
-    font-family: Arial;    
+    font-family: Arial;     
     color: white;  
 }
 
 .titulo-articulo{
     font-size: 20px;
-    background: black;
+    background: black;   
 }
 
 .intro-articulo{
@@ -25,5 +25,47 @@
     font-style: black;
     
 }
+
+.contenido{
+    padding-top: 20px;
+}
+
+header{
+    position: top;
+    z-index: 100;
+}
+
+nav{
+    float: left;;
+}
+
+nav ul{
+    list-style: none;
+    overflow: hidden;
+}
+
+nav ul li {
+    float: left;
+    font-family: Arial;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+    margin: none;
+}
+
+nav ul li a {
+    display: block;
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+
+  nav ul li:hover {
+    background: rgb(88, 51, 255);
+  }
+
+  .bar{
+    background: rgb(0, 0, 0);
+    width: 100%;
+  }
 
 
