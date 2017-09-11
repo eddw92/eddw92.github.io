@@ -1,0 +1,29 @@
+*{
+    font-family: Arial;    
+    color: white;  
+}
+
+.titulo-articulo{
+    font-size: 20px;
+    background: black;
+}
+
+.intro-articulo{
+    font-size: 15px;
+    background: black;
+}
+
+.fecha-publicacion{
+    font-size: 12px;
+    background: black;
+}
+
+.footer-info
+{
+    background: rgba(255, 255, 255, 0.17);
+    font-size: 12px;
+    font-style: black;
+    
+}
+
+
