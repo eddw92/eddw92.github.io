@@ -1,0 +1,37 @@
+*{
+    color: red;
+    margin: 0;
+}
+
+body{
+    background-color:  lightsalmon;
+}
+
+#contenedor{
+    background: white;
+    margin: 20px;
+    width: 400px;
+}
+
+#relativa{
+    position: relative;
+    color: blueviolet;
+    top: 20px;
+}
+
+#absoluto
+{
+    position: absolute;
+    top: 10px;
+    z-index:10;
+    background-color: pink;
+}
+
+#p1, #p2, #p3{
+    float: left;
+    width: 120px;
+}
+
+#p3{
+    clear: left;
+}
