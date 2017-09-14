@@ -1,0 +1,40 @@
+*{
+    font-family: Arial;
+    padding: 0px;
+    margin: 0px;
+}
+
+footer{
+    background: #4D6370;
+    color: white;
+    padding: 4px;
+    text-align: center;
+    clear: left;
+}
+
+header{
+    background-color: #4D6370;
+    color: white;
+    padding: 8px;
+}
+
+#contenedor{
+
+}
+
+h2{
+    border-bottom: 1px solid #4D6370;
+}
+
+#contenido{
+    width: 68%;
+    float: left;
+    padding: 1%;
+}
+
+#barralateral{
+    width: 28%;
+    float: left;
+    background: #ddceb3;
+    padding: 1%;
+}

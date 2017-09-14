@@ -27,9 +27,9 @@ body{
     background-color: pink;
 }
 
-#p1, #p2, #p3{
+#p1, #p2 {
     float: left;
-    width: 120px;
+    width: 160px;
 }
 
 #p3{
