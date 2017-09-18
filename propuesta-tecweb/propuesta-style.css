@@ -1,0 +1,100 @@
+/*FUENTES*/
+@font-face {
+    font-family: 'Mukta';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Mukta Regular'), local('Mukta-Regular'), url(https://fonts.gstatic.com/s/mukta/v3/q-tytnvlzg1nj8JgRZDYrw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+  }
+
+  
+@font-face {
+    font-family: 'Satisfy';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Satisfy Regular'), local('Satisfy-Regular'), url(https://fonts.gstatic.com/s/satisfy/v7/2OzALGYfHwQjkPYWELy-cw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+    font-family: 'Walter Turncoat';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Walter Turncoat Regular'), local('WalterTurncoat-Regular'), url(https://fonts.gstatic.com/s/walterturncoat/v7/sG9su5g4GXy1KP73cU3hvbescDKuDVIm01MBkTErNGM.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+  }
+
+
+*{
+    color:white;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-image: url(imagenes/dentist.jpg);
+    background-size: 100%;
+}
+
+h1{
+    font-size: 25px;
+}
+
+h2{
+    font-size: 60px;
+
+}
+
+h3{
+    font-size: 18px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.59);
+    padding: 1%;
+    font-family: "Walter Turncoat", Arial;
+}
+
+h4{
+    font-style: italic;
+    font-size: 15px; 
+}
+
+p{
+    margin-top: 4px;
+}
+
+p , ul {
+    font-family: "Mukta", Arial;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.contenido{
+    margin:2%;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.51)   
+}
+
+.encabezado{
+    text-align: center;
+    font-family: "Satisfy";
+}
+
+.galeria{
+    margin: 2%;
+    background-color: rgba(0, 0, 0, 0.51)   
+}
+
+.imagenes{
+    padding: 2%;
+    display:inline-block;
+    text-align:center;  
+}
+
+.media{
+    margin: 2%;
+    background-color: rgba(0, 0, 0, 0.51);
+}
+
+.video{
+    padding: 2%;
+}
