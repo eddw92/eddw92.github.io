@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modelo cliente-servidor, Páginas web estaticas, Servidores DNS y seguridad HTTPS.</title>
+    <link rel="stylesheet" href="temario-extra-style.css">
+</head>
+
+<header>
+    <h1>Modelo cliente-servidor, Páginas web estaticas, Servidores DNS y seguridad HTTPS.</h1>
+</header>
+
+<body>
+    <div class="encabezado">
+        <h2>Modelo cliente-servidor</h2>
+    </div>
+
+    <div class="contenido">
+        <p>El modelo cliente-servidor consiste básicamente en un cliente que realiza peticiones a 
+            otro programa (el servidor) que le da respuesta.</p>
+        <p>Es la comunicación se da de esta manera: navegador web (cliente), internet, servidor web, disco duro en el sistema.</p>
+        <ol>
+            <li>Usuario escribe la URL.</li>
+            <li>Busca IP del servidor en el DNS.</li>
+            <li>Solicita la pág del servidor usando la IP.</li>
+            <li>Persive la solicitud de pág.</li>
+            <li>Obtiene la página desde el disco duro.</li>
+            <li>Regresa a la página.</li>
+            <li>Despliega la pág.</li>
+        </ol>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>NAVEGADOR</th>
+                    <th>INTERNET</th>
+                    <th>SERVIDOR</th>
+                    <th>PROCESADOR PHP</th>
+                    <th>DISCO DURO</th>
+                    <th>BASE DE DATOS</th>
+                </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                    <td>Introduce URL</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+            </tr>   
+            <tr>
+                    <td></td>
+                    <td>Busca IP</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+            </tr>   
+            <tr>
+                    <td>Solicita la pág.</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+            </tr>   
+            <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Recibe solicitud</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+            </tr>   
+            <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Obtiene la pág.</td>
+                    <td></td>
+            </tr>   
+            <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Obtiene PHP</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+            </tr>   
+            <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Procesa PHP</td>
+                    <td></td>
+                    <td></td>
+            </tr>   
+            <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Ejecuta SQL</td>
+            </tr>     
+            <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Recibe los datos</td>
+                    <td></td>
+                    <td></td>
+            </tr>  
+            <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Regresa pág.</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+            </tr> 
+            <tr>
+                    <td>Despliega pág.</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+            </tr> 
+            </tbody>
+        </table>
+   
+    </div>
+
+    <div class="encabezado">
+            <h2>Páginas web estaticas</h2>
+    </div>
+
+    <div class="contenido">
+        <p>Los sitios Web estáticos son aquellos sitios enfocados principalmente a mostrar una 
+            información permanente, donde el navegante se limita a obtener dicha información, 
+            sin que pueda interactuar con la página Web visitada, las Web estáticas están construidas 
+            principalmente con hipervínculos o enlaces (links) entre las páginas Web que conforman el sitio, 
+            este tipo de Web son incapaces de soportar aplicaciones Web como gestores de bases de datos, foros, 
+            consultas on line, e-mails inteligentes.</p>
+    </div>
+
+    <div class="encabezado">
+            <h2>Servidores DNS y seguridad HTTPS</h2>
+    </div>
+
+    <div class="contenido">
+        <p>El sistema de nombres de dominio (DNS, por sus siglas en inglés, Domain Name System) es un 
+            sistema de nomenclatura jerárquico descentralizado para dispositivos conectados a redes IP 
+            como Internet o una red privada. Este sistema asocia información variada con nombre de dominio 
+            asignado a cada uno de los participantes. Su función más importante es "traducir" nombres 
+            inteligibles para las personas en identificadores binarios asociados con los equipos conectados 
+            a la red, esto con el propósito de poder localizar y direccionar estos equipos mundialmente.</p>
+
+            <p>HTTPS (HyperText Transfer Protocol Secure, Protocolo de transferencia de hipertexto) es un protocolo de comunicación de Internet que protege la integridad y la confidencialidad de los datos de los usuarios entre sus ordenadores y el sitio web. Puesto que el usuario espera que su experiencia online sea segura y privada, te recomendamos que implementes el protocolo HTTPS para proteger la conexión entre él y el sitio, sea cual sea el contenido.</p>
+            <p>El envío de datos mediante el protocolo HTTPS está protegido mediante el protocolo de seguridad de la capa de transporte (TLS), que proporciona las tres capas clave de seguridad siguientes:</p>
+            <ol>
+            <li>Cifrado: se cifran los datos intercambiados para mantenerlos a salvo de miradas indiscretas. Ello significa que cuando un usuario está navegando por un sitio web, nadie puede "escuchar" sus conversaciones, hacer un seguimiento de sus actividades por las diferentes páginas ni robarle información. </li>
+            <li>Integridad de los datos: los datos no pueden modificarse ni dañarse durante las transferencias, ni de forma intencionada ni de otros modos, sin que esto se detecte. </li>
+            <li>Autenticación: garantiza que tus usuarios se comuniquen con el sitio web previsto. Proporciona protección frente a los ataques "man-in-the-middle" y contribuye a la confianza de los usuarios, lo que se traduce en otros beneficios empresariales. </li>
+            <o>
+            
+    </div>
+</body>
+
+<footer>
+
+</footer>
+
+</html>
