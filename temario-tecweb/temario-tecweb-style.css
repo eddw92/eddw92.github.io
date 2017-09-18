@@ -1,0 +1,70 @@
+@font-face {
+    font-family: 'Mukta';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Mukta Regular'), local('Mukta-Regular'), url(https://fonts.gstatic.com/s/mukta/v3/q-tytnvlzg1nj8JgRZDYrw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+  }
+
+  
+@font-face {
+    font-family: 'Satisfy';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Satisfy Regular'), local('Satisfy-Regular'), url(https://fonts.gstatic.com/s/satisfy/v7/2OzALGYfHwQjkPYWELy-cw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+header{
+    color: white;
+    font-family: "Satisfy", Arial;
+    text-align: center;     
+}
+
+body{
+    background-image: url(imagenes/code.jpeg);
+    background-size: 100%;
+    padding: 0px;
+}
+
+thead th {
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: "Mukta", Arial;    
+  }
+  
+  tr {
+    background: rgba(255, 255, 255, 0.88);
+    border-bottom: 1px;
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+  
+  th, td {
+    font-weight: 400;
+    padding: 12px;
+    font-size: 12px;
+    text-align: left;
+    width: 33.3333%;
+  }
+  
+  p{
+    font-family: "Mukta", Arial;     
+  }
+
+  h1{
+      font-size: 50px;    
+  }
+
+  h5{
+      color: black;
+      font-size: 14px;  
+  }
+
+  h6{
+    font-size: 15px;   
+  }
