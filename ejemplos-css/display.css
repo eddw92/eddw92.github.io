@@ -1,0 +1,19 @@
+a{
+    border-style: solid;
+    background: #333745;
+    color: white;
+    padding: 5px;
+    text-decoration: none;
+    transition: 200ms;
+
+}
+
+a:hover{
+    background: #527BFF;
+    border-radius: 10px;
+}
+
+a:active{
+    color: #FFB3BF;
+    background: #FF006A;
+}
