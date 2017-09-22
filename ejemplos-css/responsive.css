@@ -1,31 +1,40 @@
 *{
-    margin: 0;
-    padding: 0;
+    margin: 0x;
+    padding: 0px;
     box-sizing: border-box;
 }
 
-img {
+.contenedor{
+    width: 80%;
+    margin: auto;
+    background-color: gray;
+}
+
+img{
     width: 100%;
 }
 
-.contenedor{
-    background-color: #aaaa;
-    width:  80%;
-    margin: 0 auto;
+h2{
+    text-align: center;
 }
 
 main{
     background-color: pink;
     width: 60%;
     display: inline-block;
+    color: #FFFFFF;
+    text-align: justify;
+    padding: 2%;
     margin-right: -4px;
-    vertical-align: top;
-    padding: 4px;
 }
 
 aside{
     background-color: yellow;
     width: 40%;
+    display: inline-block;
+    text-align: justify;
+    color: #FFFFFF;    
+    padding: 2%;
     margin-right: -4px;
-    padding: 4px;
+    vertical-align: top;
 }
