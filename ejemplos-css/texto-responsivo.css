@@ -1,0 +1,27 @@
+@media only screen and (max-width:400px) {
+    body{
+        background-color: #02A702;
+    }
+    
+}
+
+@media only screen and (max-width:400px) and (min-width:800px) {
+    body{
+        background-color: blue;
+    }
+    
+}
+
+@media only screen and (max-width:800px) and (min-width:1600px) {
+    body{
+        background-color: red;
+    }
+    
+}
+
+@media only screen and (min-width:1600px) {
+    body{
+        background-color: yellow;
+    }
+    
+}
