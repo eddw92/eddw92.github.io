@@ -1,27 +1,65 @@
-@media only screen and (max-width:400px) {
-    body{
-        background-color: #02A702;
+body{
+    background-color: #1A1919;
+    color: white;
+}
+
+.contenedor{
+    background-color: #A7A7A7;
+    max-width: 75 rem;
+    margin: 0 auto;
+}
+
+p{
+    border: 1px solid black;
+    padding: 1.35rem
+}
+
+
+@media only screen and (max-width: 25rem) {
+    .tablet, .desktop, .smarttv{
+        /*background-color: #02A702;*/
+        display: none;
+    }
+    html{
+        font-size: 90%;
     }
     
 }
 
-@media only screen and (max-width:400px) and (min-width:800px) {
-    body{
-        background-color: blue;
+@media only screen and (min-width:25rem) and (max-width:50rem) {
+    .movil, .desktop, .smarttv{
+        /*background-color: blue;*/
+        display: none;
+        
+    }
+    html{
+        font-size: 150%;
     }
     
 }
 
-@media only screen and (max-width:800px) and (min-width:1600px) {
-    body{
-        background-color: red;
+@media only screen and (min-width:50rem) and (max-width:75rem) {
+    .movil, .tablet, .smarttv{
+        /*background-color: red;*/
+        display: none;
+        
+    }
+
+    html{
+        font-size: 175%;
     }
     
 }
 
-@media only screen and (min-width:1600px) {
-    body{
-        background-color: yellow;
+@media only screen and (min-width:100rem) {
+    .movil, .tablet, .desktop,{
+        /*background-color: yellow;*/
+        display: none;
+        
+    }
+
+    html{
+        font-size: 200%;
     }
     
 }
