@@ -1,0 +1,60 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+.contenedor{
+    width: 80%;
+    background: #aaa;
+    margin: 0 auto;
+}
+
+.logo , nav{
+    display: inline-block;
+    vertical-align: middle; /*que los acomode en vertical al centro*/
+}
+
+header{
+    background: #1B3357;
+}
+
+.logo{
+    max-width: 25%;
+    padding: 1rem;
+    
+}
+
+.logo img{
+    max-width: 100%;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none; /*Elimina el subrayado de los links*/
+    padding: 1.25rem;
+    margin: 0.625rem;
+    border-radius: 0.625rem;
+    display: block; /*Genera el espacio alrededor*/
+}
+
+nav ul li a:hover{
+    background:#5F84FF  ;
+    color: #414DF5;
+}
+
+nav ul li{
+    display: inline-block;
+}
+
+nav ul{
+    list-style: none;
+}
+
+@media screen and (max-width: 48.75rem){
+    .logo{
+            max-width: 100%;
+            margin: 0 auto;
+    }
+}
