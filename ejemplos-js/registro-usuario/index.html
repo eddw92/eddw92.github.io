@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Registro de Usuario</title>
+</head>
+
+<body>
+
+    <div id="contenedor">
+            <h1>Registro de Usuario</h1>
+        <form action="" id="registro">
+            <label>
+                Nombre Usuario
+                <input type="text" name="nombre" id="nombre">
+            </label>
+            <label>
+                Contraseña:
+                <input type="text" name="contra" id="contra">
+            </label>
+            <label>
+                Contraseña nueva:
+                <input type="text" name="contra2" id="contra2">
+            </label>
+            <label>       
+                <input type="checkbox" name="termCond" id="termCond">
+                <a href="#">Aceptar terminos y condiciones.</a>          
+            </label>
+
+            <div id="validacion"></div>
+            <input type="submit" name="registrar" id="registrar" value="Registrar">            
+           
+        </form>
+    </div>
+    <script src="registro-usuario.js"></script>
+</body>
+
+</html>
