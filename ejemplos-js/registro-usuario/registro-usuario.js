@@ -9,9 +9,9 @@ var mensajeTerm = document.getElementById('validacionTermCond');
 var mensajeReg = document.getElementById('validacionReg');
 
 formulario.addEventListener('submit', function(evento){
-    if(!verificaNombre() || !verificaContra() || !verificaTerminos())
+    if(!verificaTerminos() || !verificaNombre() || !verificaContra() )
     {
-        mensajeReg.innerHTML = 'Verifica errores en el formulario.';
+        mensajeReg.innerHTML = ' Verifica errores en el formulario. ';
         evento.preventDefault(); //NO ENVIA NADA AL SERVIDOR
     } 
 });
@@ -23,6 +23,10 @@ formulario.nombre.addEventListener('blur',function(evento){
 
 formulario.contra.addEventListener('keyup',function(evento){
     verificaSeguridad();
+});
+
+formulario.contra2.addEventListener('blur',function(evento){
+    verificaContra();
 });
 
 
@@ -37,7 +41,7 @@ function verificaNombre()
     } 
     else{
         
-        mensajeNombre.innerHTML += ' Error: Requiere una letra al comienzo del nombre de usuario. ';
+        mensajeNombre.innerHTML = ' Error: Requiere una letra al comienzo del nombre de usuario. ';
         return false;
     }   
 }
@@ -45,46 +49,27 @@ function verificaNombre()
 
 function verificaSeguridad()
 {
-    var contraseña = formulario.contra.value;
-    var letra = false;
-    var digitos = false;
-    var simbolos = false;
+    var letra = (/[a-z]/i).test(formulario.contra.value) ;
+    var digitos = (/[0-9]/).test(formulario.contra.value);
+    var simbolos = (/[!"#$%&/()]/).test(formulario.contra.value);
 
-    var expRegL = /[a-z]/i;
-    var expRegN = /[0-9]/;
-
-    mensajeContra.innerHTML = "";
-
-    for(i=0; i<contraseña.length;i++)
-    {
-        if(expRegL.test(contraseña.charCodeAt(0)))
-        {
-            letra = true;
-        }
-        else if(expRegN.test(contraseña.charCodeAt(0)))
-        {
-            digitos = true;            
-        }
-        else{
-            simbolos = true;            
-        }
-    }
-
-    if(letra==true && digitos==true && simbolos==true)
+    if(letra&&digitos&&simbolos)
     {
         //Es fuertemente segura.
-        mensajeContra.innerHTML += 'La contraseña es fuertemente segura. ';
+        mensajeContra.className='nivel-seguro';
+        mensajeContra.innerHTML = 'Segura';
     }
-    else if(letra==true&&digitos==true)
+    else if(letra&&digitos)
     {
         //Es medianamente segura.  
-        mensajeContra.innerHTML += ' La contraseña es medianamente segura. ';  
+        mensajeContra.className='nivel-mediano';
+        mensajeContra.innerHTML = 'Mediana';  
     }
     else{
         //Es debilmente segura.
-        mensajeContra.innerHTML += ' La contraseña es debilmente segura. ';
+        mensajeContra.className='nivel-debil';
+        mensajeContra.innerHTML = 'Debil';
     }
-
 }
 
 function verificaContra()
@@ -93,32 +78,32 @@ function verificaContra()
 
     if(contraseña.length>=8)
     {   
-        if(contraseña == formulario.contra2.value)
+        if(formulario.contra.value == formulario.contra2.value)
         {   
-            mensajeContra.innerHTML = "";            
+            mensajeContra2.innerHTML = "";            
             return true; 
         }   
         else{
-            return false;
             mensajeContra2.innerHTML = ' Error: Las contraseñas no son iguales.';
+            return false;
         }             
     }
     else
     {
-        contra.innerHTML = ' Error: La contraseña no cuenta con un min 8 caracteres.';
+        mensajeContra2.innerHTML = ' Error: La contraseña no cuenta con un min 8 caracteres.';
         return false;
     }    
 }
 
 function verificaTerminos()
 {
-   if(formulario.termCond.value=="on")
+   if(formulario.termCond.checked==true)
    {
         mensajeTerm.innerHTML = "";    
         return true;
    }
    else{
-        mensajeTerm.innerHTML += ' Error: No se han aceptado los terminos y condiciones. ';
+        mensajeTerm.innerHTML = ' Error: No se han aceptado los terminos y condiciones. ';
         return false;
    }  
 }

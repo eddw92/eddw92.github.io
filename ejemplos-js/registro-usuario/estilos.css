@@ -2,3 +2,17 @@ label{
     display: block;
     margin: 1rem;
 }
+
+.nivel-debil{
+    color: red;
+}
+.nivel-mediano{
+    color: blue;
+}
+.nivel-seguro{
+    color: greenyellow;
+}
+
+#mensaje {
+    margin: 1rem;
+}
