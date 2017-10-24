@@ -36,8 +36,6 @@ ordenaTabla.addEventListener('click', function(evento){
     }
 });
 
-
-
 function muestraMaterias() 
 {
     var tabla = document.createElement('table');
