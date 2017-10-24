@@ -24,13 +24,13 @@ ordenaTabla.addEventListener('click', function(evento){
     else if(eventoS==c)
     {
         materias.sort(function (m1, m2) {
-            return m1.optativa - m2.optativa; 
+            return m1.Creditos - m2.Creditos; 
         });
         actualizaTabla();
     }
     else{
         materias.sort(function (m1, m2) {
-            return m1.optativa - m2.optativa;  
+            return m1.Optativa - m2.Optativa;  
         });
         actualizaTabla();
     }
