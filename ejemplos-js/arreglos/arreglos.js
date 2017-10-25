@@ -11,6 +11,8 @@ var tabla = document.createElement('table');
 tabla.setAttribute('id', 'tabla');
 tabla.appendChild(creaEncabezado());
 
+var materiasFiltradas=materias;
+
 muestraMaterias(materias);
 
 function muestraMaterias(mats) 
@@ -48,21 +50,21 @@ ordenaTabla.addEventListener('click', function(evento){
     var o = document.getElementById('optativaId');
     if(eventoS==n)
     {
-        materias.sort(comparaNombre);
-        actualizaTabla(materias);
+        materiasFiltradas.sort(comparaNombre);
+        actualizaTabla(materiasFiltradas);
     }
     else if(eventoS==c)
     {
-        materias.sort(function (m1, m2) {
+        materiasFiltradas.sort(function (m1, m2) {
             return m1.Creditos - m2.Creditos; 
         });
-        actualizaTabla(materias);
+        actualizaTabla(materiasFiltradas);
     }
     else{
-        materias.sort(function (m1, m2) {
+        materiasFiltradas.sort(function (m1, m2) {
             return m1.Optativa - m2.Optativa;  
         });
-        actualizaTabla(materias);
+        actualizaTabla(materiasFiltradas);
     }
 });
 
@@ -135,7 +137,6 @@ function comparaNombre(m1, m2) {
 }
 
 var busqueda = document.getElementById('busqueda');
-var materiasFiltradas=[];
 var expRegA = /[a-z]/i;
 
 busqueda.addEventListener('keyup', function(){
@@ -143,18 +144,15 @@ busqueda.addEventListener('keyup', function(){
     {
         if(expRegA.test(busqueda.value))
         {
-            materiasFiltradas = obtenerMateriasFiltradas(materias, busqueda.value);
-            actualizaTabla(materiasFiltradas);
+            materiasFiltradas = materias.filter(function(mat){
+                return mat.Nombre.includes(busqueda.value);
+            });
         }
         else
         {
-            actualizaTabla(materias);
+            materiasFiltradas = materias;
         }
+        actualizaTabla(materiasFiltradas);
     }
 });
 
-function obtenerMateriasFiltradas(mats, busqueda) {
-    return mats.filter(function (mat) {
-    return mat.Nombre.toLowerCase().includes(busqueda.toLowerCase());
-});
-}
