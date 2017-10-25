@@ -7,41 +7,14 @@ var materias = [
     {Nombre: 'Graficacion por Computadoras A', Creditos: 10, Optativa: false}
 ];
 
+var tabla = document.createElement('table');
+tabla.setAttribute('id', 'tabla');
+tabla.appendChild(creaEncabezado());
+
 muestraMaterias();
-
-var ordenaTabla = document.getElementById('encabezado');
-
-ordenaTabla.addEventListener('click', function(evento){
-    var eventoS = evento.target;
-    var n = document.getElementById('nombreId');
-    var c = document.getElementById('creditosId');
-    var o = document.getElementById('optativaId');
-    if(eventoS==n)
-    {
-        materias.sort(materias.Nombre);
-        actualizaTabla();
-    }
-    else if(eventoS==c)
-    {
-        materias.sort(function (m1, m2) {
-            return m1.Creditos - m2.Creditos; 
-        });
-        actualizaTabla();
-    }
-    else{
-        materias.sort(function (m1, m2) {
-            return m1.Optativa - m2.Optativa;  
-        });
-        actualizaTabla();
-    }
-});
 
 function muestraMaterias() 
 {
-    var tabla = document.createElement('table');
-    tabla.setAttribute('id', 'tabla');
-    tabla.appendChild(creaEncabezado());
-
     console.log('For normalito');
     for(var i = 0; i < materias.length; i++)
     {
@@ -58,11 +31,40 @@ function muestraMaterias()
     });
     
     materias.forEach(function (mat) {
-        tabla.appendChild(creaFila(mat));    // Se le agrega al TBody los elementos.
+        tabla.appendChild(creaFila(mat));    
     });
 
     document.body.appendChild(tabla);
+
 }
+
+//PARA SEGUIR ACTUALIZANDO LA TABLA
+var ordenaTabla = document.getElementById('encabezado');
+
+ordenaTabla.addEventListener('click', function(evento){
+    var eventoS = evento.target;
+    var n = document.getElementById('nombreId');
+    var c = document.getElementById('creditosId');
+    var o = document.getElementById('optativaId');
+    if(eventoS==n)
+    {
+        materias.sort(comparaNombre);
+        actualizaTabla();
+    }
+    else if(eventoS==c)
+    {
+        materias.sort(function (m1, m2) {
+            return m1.Creditos - m2.Creditos; 
+        });
+        actualizaTabla();
+    }
+    else{
+        materias.sort(function (m1, m2) {
+            return m1.Optativa - m2.Optativa;  
+        });
+        actualizaTabla();
+    }
+});
 
 function creaFila(mat)
 {
@@ -117,10 +119,37 @@ function creaEncabezado()
 function actualizaTabla()
 {
     var tabla = document.getElementById('tabla');
-    while (tabla.firstChild) {
-        tabla.removeChild(tabla.firstChild);
+    var aux = tabla.firstChild.nextSibling;
+    while (aux) {
+        aux2 = aux;
+        aux = aux.nextSibling;
+        tabla.removeChild(aux2);
     }
-    materias.forEach(function (mat) {
-        tabla.appendChild(creaFila(mat));   
-    });
+    muestraMaterias();
 }
+
+function comparaNombre(m1, m2) {
+    if (m1.Nombre === m2.Nombre) return 0;
+    else if (m1.Nombre < m2.Nombre) return -1;
+    else return 1;
+}
+
+var buscar = document.getElementById('buscarButton');
+
+    buscar.addEventListener('click',function(evento){
+    var textoBuscar = document.getElementById('busqueda').value;
+    //var tabla = document.getElementById('tabla');
+    var aux = tabla.firstChild.nextSibling;
+    while (aux) {
+        aux2 = aux;
+        aux = aux.nextSibling;
+        tabla.removeChild(aux2);
+    }
+
+    materias.forEach(function (mat) {
+
+        //AQUI ANTES DE AGREGAR HAS EL FILTRADO SEGUN LA CADENA OBTENIDA OOR TEXTO BUSCAR
+
+        tabla.appendChild(creaFila(mat));    
+    });
+})
