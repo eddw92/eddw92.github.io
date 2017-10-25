@@ -11,9 +11,9 @@ var tabla = document.createElement('table');
 tabla.setAttribute('id', 'tabla');
 tabla.appendChild(creaEncabezado());
 
-muestraMaterias();
+muestraMaterias(materias);
 
-function muestraMaterias() 
+function muestraMaterias(mats) 
 {
     console.log('For normalito');
     for(var i = 0; i < materias.length; i++)
@@ -30,7 +30,7 @@ function muestraMaterias()
         console.log('Optativa: ' + mat.Optativa ? 'Si' : 'No');
     });
     
-    materias.forEach(function (mat) {
+    mats.forEach(function (mat) {
         tabla.appendChild(creaFila(mat));    
     });
 
@@ -49,20 +49,20 @@ ordenaTabla.addEventListener('click', function(evento){
     if(eventoS==n)
     {
         materias.sort(comparaNombre);
-        actualizaTabla();
+        actualizaTabla(materias);
     }
     else if(eventoS==c)
     {
         materias.sort(function (m1, m2) {
             return m1.Creditos - m2.Creditos; 
         });
-        actualizaTabla();
+        actualizaTabla(materias);
     }
     else{
         materias.sort(function (m1, m2) {
             return m1.Optativa - m2.Optativa;  
         });
-        actualizaTabla();
+        actualizaTabla(materias);
     }
 });
 
@@ -116,7 +116,7 @@ function creaEncabezado()
     return encabezado;
 }
 
-function actualizaTabla()
+function actualizaTabla(mats)
 {
     var tabla = document.getElementById('tabla');
     var aux = tabla.firstChild.nextSibling;
@@ -125,7 +125,7 @@ function actualizaTabla()
         aux = aux.nextSibling;
         tabla.removeChild(aux2);
     }
-    muestraMaterias();
+    muestraMaterias(mats);
 }
 
 function comparaNombre(m1, m2) {
@@ -134,22 +134,27 @@ function comparaNombre(m1, m2) {
     else return 1;
 }
 
-var buscar = document.getElementById('buscarButton');
+var busqueda = document.getElementById('busqueda');
+var materiasFiltradas=[];
+var expRegA = /[a-z]/i;
 
-    buscar.addEventListener('click',function(evento){
-    var textoBuscar = document.getElementById('busqueda').value;
-    //var tabla = document.getElementById('tabla');
-    var aux = tabla.firstChild.nextSibling;
-    while (aux) {
-        aux2 = aux;
-        aux = aux.nextSibling;
-        tabla.removeChild(aux2);
+busqueda.addEventListener('keyup', function(){
+    if(busqueda!="")
+    {
+        if(expRegA.test(busqueda.value))
+        {
+            materiasFiltradas = obtenerMateriasFiltradas(materias, busqueda.value);
+            actualizaTabla(materiasFiltradas);
+        }
+        else
+        {
+            actualizaTabla(materias);
+        }
     }
+});
 
-    materias.forEach(function (mat) {
-
-        //AQUI ANTES DE AGREGAR HAS EL FILTRADO SEGUN LA CADENA OBTENIDA OOR TEXTO BUSCAR
-
-        tabla.appendChild(creaFila(mat));    
-    });
-})
+function obtenerMateriasFiltradas(mats, busqueda) {
+    return mats.filter(function (mat) {
+    return mat.Nombre.toLowerCase().includes(busqueda.toLowerCase());
+});
+}
