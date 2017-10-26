@@ -1,10 +1,10 @@
 var materias = [
-    {Nombre: 'Tecnologías Web', Creditos: 8, Optativa: true},
-    {Nombre: 'Sistemas de Informacion A', Creditos: 10, Optativa: false},
-    {Nombre: 'Compiladores A', Creditos: 10, Optativa: false},
-    {Nombre: 'Base de Datos A', Creditos: 10, Optativa: false},
-    {Nombre: 'Ingles 4', Creditos: 10, Optativa: false},
-    {Nombre: 'Graficacion por Computadoras A', Creditos: 10, Optativa: false}
+    {Nombre: 'Tecnologías Web', Creditos: 8, Optativa: true, Elimina: false},
+    {Nombre: 'Sistemas de Informacion A', Creditos: 10, Optativa: false, Elimina: false },
+    {Nombre: 'Compiladores A', Creditos: 10, Optativa: false, Elimina: false},
+    {Nombre: 'Base de Datos A', Creditos: 10, Optativa: false, Elimina: false},
+    {Nombre: 'Ingles 4', Creditos: 10, Optativa: false, Elimina: false},
+    {Nombre: 'Graficacion por Computadoras A', Creditos: 10, Optativa: false,  Elimina: false}
 ];
 
 var tabla = document.createElement('table');
@@ -48,6 +48,7 @@ ordenaTabla.addEventListener('click', function(evento){
     var n = document.getElementById('nombreId');
     var c = document.getElementById('creditosId');
     var o = document.getElementById('optativaId');
+    var e = document.getElementById('eliminaId');
     if(eventoS==n)
     {
         materiasFiltradas.sort(comparaNombre);
@@ -60,11 +61,29 @@ ordenaTabla.addEventListener('click', function(evento){
         });
         actualizaTabla(materiasFiltradas);
     }
-    else{
+    else if(eventoS==o){
         materiasFiltradas.sort(function (m1, m2) {
             return m1.Optativa - m2.Optativa;  
         });
         actualizaTabla(materiasFiltradas);
+    }
+    else{
+        /*materias.forEach(function (mat) {
+            if(mat.Elimina==true)
+            {
+                materias.pop();
+            }    
+        });*/
+
+        for(var i = 0; i < materias.length; i++)
+        {    
+            if(materias[i].Elimina==true)
+            {
+                materias.splice(i,1)
+            }  
+        }
+
+        actualizaTabla(materias);
     }
 });
 
@@ -84,9 +103,20 @@ function creaFila(mat)
     var textoOptativa = document.createTextNode(mat.Optativa);
     optativa.appendChild(textoOptativa);
 
+    var elimina = document.createElement('td');
+    var eliminaCbox = document.createElement("input");
+    eliminaCbox.type="checkbox";
+    eliminaCbox.checked=mat.Elimina;
+    eliminaCbox.addEventListener('click', function(){
+        mat.Elimina = !mat.matElimina;
+    });
+    
+    elimina.appendChild(eliminaCbox);
+
     fila.appendChild(nombre);
     fila.appendChild(creditos);
     fila.appendChild(optativa);
+    fila.appendChild(elimina);
 
     return fila;
 }
@@ -110,9 +140,15 @@ function creaEncabezado()
     optativa.setAttribute('id', 'optativaId');
     optativa.appendChild(textoOptativa);
 
+    var elimina = document.createElement('th');
+    var textoElimina = document.createTextNode('Elimina');
+    elimina.setAttribute('id', 'eliminaId');
+    elimina.appendChild(textoElimina);
+
     encabezado.appendChild(nombre);
     encabezado.appendChild(creditos);
     encabezado.appendChild(optativa);
+    encabezado.appendChild(elimina);
 
     encabezado.setAttribute('id', 'encabezado');
     return encabezado;
@@ -154,5 +190,20 @@ busqueda.addEventListener('keyup', function(){
         }
         actualizaTabla(materiasFiltradas);
     }
+});
+
+
+var buttonInsertar = document.getElementById('insertarMateria');
+
+buttonInsertar.addEventListener('click', function(){  
+    var nombreMat = document.getElementById('nombre');    
+    var creditosMat = document.getElementById('creditos');
+    var optativaMat = document.getElementById('optativa').checked;
+
+    materias.push({Nombre: nombreMat.value, Creditos: creditosMat.value, Optativa: optativaMat,  Elimina: false});
+    nombreMat.value = optativaMat.value = busqueda.value ="";
+    creditosMat.value = 0;
+    actualizaTabla(materias);
+
 });
 

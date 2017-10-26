@@ -2,6 +2,11 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    /*display: block;
+    width: 80%;
+    margin: auto;*/
+    
 }
 
 tr{
@@ -10,6 +15,8 @@ tr{
 }
 
 th{
-    border-bottom: 1px solid black;
+    /*border-bottom: 1px solid black;*/
     text-transform: uppercase;
+    background-color: rgb(63, 63, 63);
+    textcolo
 }
